@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="canvas保存图片方法(兼容ie)">
+        <meta property="og:title" content="用的上的漂亮的css效果(集合)">
     
 
     <!--Open Graph Description-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>canvas保存图片方法(兼容ie) - GM&#39;s Blog</title>
+    <title>用的上的漂亮的css效果(集合) - GM&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -165,13 +165,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>canvas保存图片方法(兼容ie)</h1>
+                    <h1>用的上的漂亮的css效果(集合)</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2019-04-26
+                            2018-04-27
                         
                     </span>
                 </div>
@@ -192,17 +192,12 @@
                         
 
 
-<a href="/tags/es6/">#es6</a> <a href="/tags/js/">#js</a> <a href="/tags/canvas/">#canvas</a>
+<a href="/tags/css/">#css</a> <a href="/tags/html/">#html</a> <a href="/tags/svg/">#svg</a>
 
 
                     
                 </div>
                 <div class="col-lg-4 col-md-5 post-categories">
-                    
-                        
-
-<a href="/categories/学习笔记/">学习笔记</a>
-
                     
                 </div>
             
@@ -212,7 +207,17 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">downloadPhotos()&#123;</span><br><span class="line">    <span class="comment">//确定图片的类型 获取到的图片格式 data:image/Png;base64,......</span></span><br><span class="line">    <span class="keyword">let</span> type = <span class="string">'jpeg'</span>;</span><br><span class="line">    <span class="keyword">let</span> canvas = <span class="keyword">this</span>.$refs[<span class="string">'ent-rela-echart'</span>].querySelector(<span class="string">'canvas'</span>);</span><br><span class="line">    <span class="keyword">let</span> imgdata = canvas.toDataURL(type, <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//将mime-type改为image/octet-stream,强制让浏览器下载</span></span><br><span class="line">    <span class="keyword">let</span> fixtype = <span class="function"><span class="keyword">function</span> (<span class="params">type</span>) </span>&#123;</span><br><span class="line">        type = type.toLocaleLowerCase().replace(<span class="regexp">/jpg/i</span>, <span class="string">'jpeg'</span>);</span><br><span class="line">        <span class="keyword">let</span> r = type.match(<span class="regexp">/png|jpeg|bmp|gif/</span>)[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'image/'</span> + r;</span><br><span class="line">    &#125;;</span><br><span class="line">    imgdata = imgdata.replace(fixtype(type), <span class="string">'image/octet-stream'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> base64Img2Blob = <span class="function">(<span class="params">code</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> parts = code.split(<span class="string">';base64,'</span>),</span><br><span class="line">            contentType = parts[<span class="number">0</span>].split(<span class="string">':'</span>)[<span class="number">1</span>],</span><br><span class="line">            raw = <span class="built_in">window</span>.atob(parts[<span class="number">1</span>]),</span><br><span class="line">            rawLength = raw.length,</span><br><span class="line">            uInt8Array = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(rawLength);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; rawLength; ++i) &#123;</span><br><span class="line">            uInt8Array[i] = raw.charCodeAt(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Blob([uInt8Array], &#123; <span class="attr">type</span>: contentType &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将图片保存到本地</span></span><br><span class="line">    <span class="keyword">let</span> savaFile = <span class="function"><span class="keyword">function</span> (<span class="params">data, filename</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> isIe = navigator.msSaveOrOpenBlob;</span><br><span class="line">        <span class="keyword">let</span> save_link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">        <span class="keyword">let</span> blobs = base64Img2Blob(data);</span><br><span class="line">        <span class="keyword">if</span>(isIe) &#123;</span><br><span class="line">            save_link.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="built_in">window</span>.navigator.msSaveOrOpenBlob(url, filename);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            save_link.download = <span class="string">'newPic.png'</span>;</span><br><span class="line">            save_link.innerHTML = <span class="string">'download'</span>;</span><br><span class="line">            save_link.href = URL.createObjectURL(blobs);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(save_link);</span><br><span class="line">        save_link.click();</span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(save_link);</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> filename = <span class="string">''</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getSeconds() + <span class="string">'.'</span> + type;</span><br><span class="line">    <span class="comment">//用当前秒解决重名问题</span></span><br><span class="line">    savaFile(imgdata, filename);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h2 id="粘稠的菜单"><a href="#粘稠的菜单" class="headerlink" title="粘稠的菜单"></a>粘稠的菜单</h2><p>by Lucas Bebber<br>循环切换动画菜单图标使用纯CSS动画。</p>
+<iframe id="cp_embed_LELBEo" src="//codepen.io/lbebber/embed/LELBEo?height=465]&theme-id=dark&slug-hash=LELBEo&default-tab=[css,result" scrolling="no" frameborder="no" height="465]" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+<h2 id="动画地图标记"><a href="#动画地图标记" class="headerlink" title="动画地图标记"></a>动画地图标记</h2><p>by Andreas Storm</p>
+<p>这个地图标像iOS标记图标,并且有一个向外的涟漪效果。</p>
+<iframe id="cp_embed_ClguF" src="//codepen.io/andreasstorm/embed/ClguF?height=265]&theme-id=dark&slug-hash=ClguF&default-tab=[css,result" scrolling="no" frameborder="no" height="265]" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+<h2 id="加载动画"><a href="#加载动画" class="headerlink" title="加载动画"></a>加载动画</h2><p>by Manoz</p>
+<p>gif和SVG 是网页设计中加载动画的常用选择,但下面的这些加载效果是用纯CSS打造的</p>
+<iframe id="cp_embed_pydxK" src="//codepen.io/Manoz/embed/pydxK?height=265]&theme-id=dark&slug-hash=pydxK&default-tab=[css,result" scrolling="no" frameborder="no" height="265]" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+<h2 id="material-design风格表单"><a href="#material-design风格表单" class="headerlink" title="material design风格表单"></a>material design风格表单</h2><p>by Chris Sevilleja</p>
+<p>谷歌的材料设计创造简洁的动画。幸运的是其他开发人员已经注意到,精心制作一些精美的想法这样设计CSS3 材料设计风格表单。</p>
+<iframe id="cp_embed_IdGKH" src="//codepen.io/chrisoncode/embed/IdGKH?height=265]&theme-id=dark&slug-hash=IdGKH&default-tab=[css,result" scrolling="no" frameborder="no" height="265]" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
 
 
                 
