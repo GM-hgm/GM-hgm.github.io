@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="GM&#39;s Blog">
+        <meta property="og:title" content="【进阶1】理解JavaScript 中的执行上下文和执行栈">
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>学习笔记 - GM&#39;s Blog</title>
+    <title>【进阶1】理解JavaScript 中的执行上下文和执行栈 - GM&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -157,114 +157,90 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>学习笔记</h1>
+                <div class="post-heading">
+                    <h1>【进阶1】理解JavaScript 中的执行上下文和执行栈</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-10-26
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/js/">#js</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/学习笔记/">学习笔记</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/02/27/vue-cli3-config/">
-        <h1 class="post-title archive">
-            vue-cli3 项目配置
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-02-27
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/10/26/进阶1-1/">
-        <h1 class="post-title archive">
-            【进阶1】理解JavaScript 中的执行上下文和执行栈
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/06/26/canvas-save-photo/">
-        <h1 class="post-title archive">
-            canvas保存图片方法(兼容ie)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-06-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/26/new-cli3-project/">
-        <h1 class="post-title archive">
-            构建一个vue-cli3.0项目
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/26/zhengze/">
-        <h1 class="post-title archive">
-            常用正则
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/25/first-blog/">
-        <h1 class="post-title archive">
-            JavaScript编码规范
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-25
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>执行上下文是当前 JavaScript 代码被解析和执行时所在环境的抽象概念。</p>
+<h3 id="1-执行上下文的类型"><a href="#1-执行上下文的类型" class="headerlink" title="1.执行上下文的类型"></a>1.执行上下文的类型</h3><ul>
+<li><p><strong> 全局执行上下文 </strong>:  只有一个，浏览器中的全局对象就是 window 对象，this 指向这个全局对象。(这个是默认的代码运行环境，一旦代码被载入，引擎最先进入的就是这个环境。)</p>
+</li>
+<li><p><strong> 函数执行上下文 </strong>:  存在无数个，只有在函数被调用的时候才会被创建，每次调用函数都会创建一个新的执行上下文。(当执行一个函数时，运行函数体中的代码。)</p>
+</li>
+<li><p><strong> Eval 函数执行上下文 </strong>: 指的是运行在 eval 函数中的代码，很少用而且不建议使用。</p>
+</li>
 </ul>
+<h3 id="2-执行栈"><a href="#2-执行栈" class="headerlink" title="2.执行栈"></a>2.执行栈</h3><p>&emsp;&emsp;执行栈，也叫调用栈，具有 LIFO（后进先出）结构，用于存储在代码执行期间创建的所有执行上下文。  </p>
+<p>&emsp;&emsp;首次运行JS代码时，会创建一个 <strong><em><a href="#">全局</a></em></strong> 执行上下文并Push到当前的执行栈中。每当发生函数调用，引擎都会为该函数创建一个 <strong><em> <a href="#">新的函数执</a> </em></strong> 行上下文并Push到当前执行栈的栈顶。  </p>
+<p>&emsp;&emsp;根据执行栈LIFO规则，当栈顶函数运行完成后，其对应的 <strong><em><a href="#">函数</a></em></strong> 执行上下文将会从执行栈中Pop出，上下文控制权将移到当前执行栈的<strong><em><a href="#">下一个</a></em></strong>执行上下文。  </p>
+<p><img src="https://camo.githubusercontent.com/2b271448ad38e8fde43f28db066af7dbe356cbb3/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f31312f352f313636653235386531643032383161363f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31" alt="img"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
