@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="GM&#39;s Blog">
+        <meta property="og:title" content="使用js复合事件处理中文输入的问题">
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2018 - GM&#39;s Blog</title>
+    <title>使用js复合事件处理中文输入的问题 - GM&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -157,127 +157,87 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018</h1>
+                <div class="post-heading">
+                    <h1>使用js复合事件处理中文输入的问题</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-05-22
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/js/">#js</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/学习笔记/">学习笔记</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/10/26/进阶1-1/">
-        <h1 class="post-title archive">
-            【进阶1】理解JavaScript 中的执行上下文和执行栈
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-26
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/06/26/canvas-save-photo/">
-        <h1 class="post-title archive">
-            canvas保存图片方法(兼容ie)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-06-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/05/22/input-chinese-change-event/">
-        <h1 class="post-title archive">
-            使用js复合事件处理中文输入的问题
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-05-22
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/27/css-effect/">
-        <h1 class="post-title archive">
-            用的上的漂亮的css效果(集合)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/26/new-cli3-project/">
-        <h1 class="post-title archive">
-            构建一个vue-cli3.0项目
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/26/zhengze/">
-        <h1 class="post-title archive">
-            常用正则
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/25/first-blog/">
-        <h1 class="post-title archive">
-            JavaScript编码规范
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-25
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="1-复合事件"><a href="#1-复合事件" class="headerlink" title="1.复合事件"></a>1.复合事件</h2><p>复合事件和文本事件在很对地方很相似。在触发复合事件时。目标是接收文本的输入字段。但是它比文本事件对象多一个属性data,复合事件有以下三种：</p>
+<ul>
+<li><strong><em>compositionstart</em></strong>:在文本复合系统打开时触发，表示要输入了。此时<span style="color: red;">data</span>值为正在编辑的文本(例如：已经选中的需要马上替换的文本)。</li>
+<li><strong><em>compositionupdate</em></strong>:在向字段中插入新字符时触发。此时，<span style="color: red;">data</span>的值为正在插入的新字符。</li>
+<li><strong><em>compositionend</em></strong>:在IME的文本复合系统关闭时触发，表示返回正常键盘输入状态。此时，<span style="color: red;">data</span>的值为此次输入会话中插入的新字符。   </li>
 </ul>
+<p><br></p>
+<h2 id="2-应用场景"><a href="#2-应用场景" class="headerlink" title="2.应用场景"></a>2.应用场景</h2><p>input 输入搜索时，输入拼音未完成时，不触发搜索事件</p>
+<p>解决思路：在compositionstart事件触发是，使flag为false，确保不触发input事件，在compositionend事件触发是flag为true，具体搜索操作写在input事件里。</p>
+<p>下面贴代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个flag，表示是否正在进行输入法输入（如：中文输入法）</span></span><br><span class="line"><span class="keyword">let</span> isChineseFlag = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">inputElement.addEventListener(<span class="string">'compositionstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    isChineseFlag = <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">inputElement.addEventListener(<span class="string">'compositionupdate'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// do something...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">inputElement.addEventListener(<span class="string">'compositionend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    isChineseFlag = <span class="literal">true</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">inputElement.addEventListener(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isChineseFlag) &#123;</span><br><span class="line">        <span class="comment">// do something...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
