@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="GM&#39;s Blog">
+        <meta property="og:title" content="vue国际化">
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>学习笔记 - GM&#39;s Blog</title>
+    <title>vue国际化 - GM&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -157,140 +157,92 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>学习笔记</h1>
+                <div class="post-heading">
+                    <h1>vue国际化</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-04-11
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/js/">#js</a> <a href="/tags/vue/">#vue</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/学习笔记/">学习笔记</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/04/11/i18n/">
-        <h1 class="post-title archive">
-            vue国际化
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-04-11
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/02/27/vue-cli3-config/">
-        <h1 class="post-title archive">
-            vue-cli3 项目配置
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-02-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/10/26/进阶1-1/">
-        <h1 class="post-title archive">
-            【进阶1】理解JavaScript 中的执行上下文和执行栈
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-10-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/06/26/canvas-save-photo/">
-        <h1 class="post-title archive">
-            canvas保存图片方法(兼容ie)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-06-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/05/22/input-chinese-change-event/">
-        <h1 class="post-title archive">
-            使用js复合事件处理中文输入的问题
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-05-22
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/26/new-cli3-project/">
-        <h1 class="post-title archive">
-            构建一个vue-cli3.0项目
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/26/zhengze/">
-        <h1 class="post-title archive">
-            常用正则
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/25/first-blog/">
-        <h1 class="post-title archive">
-            JavaScript编码规范
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-25
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="Vue国际化处理-vue-i18n-以及项目自动切换中英文"><a href="#Vue国际化处理-vue-i18n-以及项目自动切换中英文" class="headerlink" title="Vue国际化处理 vue-i18n 以及项目自动切换中英文"></a>Vue国际化处理 vue-i18n 以及项目自动切换中英文</h2><h3 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h3><p>用命令进入项目目录，执行以下命令安装vue国际化插件 vue-i18n<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-i18n --save</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-项目增加国际化翻译文件"><a href="#2-项目增加国际化翻译文件" class="headerlink" title="2.项目增加国际化翻译文件"></a>2.项目增加国际化翻译文件</h3><p>在项目的src下添加lang文件夹增加中文翻译文件（zh_CN.js）以及英文翻译文件（EN.js），里面分别存储项目中需要翻译的信息。</p>
+<h3 id="3-项目引入"><a href="#3-项目引入" class="headerlink" title="3.项目引入"></a>3.项目引入</h3><p>在项目的main.js中引入vue-i18n插件，引入对应的翻译文件（zh_CN.js/EN.js）引入并结合Element-UI 国际化。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/4/30/1631516409f3e518?w=725&amp;h=710&amp;f=png&amp;s=108042" alt="img"></p>
+<h3 id="4-项目使用"><a href="#4-项目使用" class="headerlink" title="4.项目使用"></a>4.项目使用</h3><p>在中文翻译文件zh_CN中引入Element-UI的中文脚本，在英文翻译文件EN中引入Element-UI的英文脚本，并且在文件中加入要翻译的内容，具体如下：</p>
+<ul>
+<li>Zh_CN.js:</li>
+<li>EN.js:</li>
 </ul>
+<p>如果是element-ui 的，在要翻译的前面加上冒号<br>比如：label=“用户姓名” 就改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:label=”$t(‘order.userName’)”</span><br></pre></td></tr></table></figure></p>
+<p>如果是html 显示的，就改用以下写法：<br>直接写成下面这样,就会直接去往翻译脚本里面自动匹配。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;$t(‘order.userName’)&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>选择语言之后把记录存在cookie里面。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/3/163242081dee100a?w=691&amp;h=279&amp;f=png&amp;s=34246" alt="img"></p>
+<p>再次打开浏览器访问项目初始化的时候从cookie里面得到之前选择的语言。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/3/163242082ec562a7?w=813&amp;h=692&amp;f=png&amp;s=82171" alt="img"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
